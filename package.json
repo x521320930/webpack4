@@ -1,0 +1,30 @@
+{
+  "name": "hs-phone.js",
+  "version": "1.0.0",
+  "description": "softening machine provides api",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "x521320930@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "sockjs-client": "^1.3.0",
+    "stomp-websocket": "^2.3.4-next",
+    "wolfy87-eventemitter": "^5.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-stage-1": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "ora": "^3.4.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  }
+}

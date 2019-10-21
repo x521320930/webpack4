@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>合生-软化机api</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="./dist/hs.phone.sdk.js"></script>
+  </head>
+  <body>
+    <button onclick="test()">拨打电话</button>
+  </body>
+  <script>
+    
+    
+    /**
+     * @description 创建 实例
+     */
+    const hs = new HsPhone()
+    /**
+     * @description 开始通信
+     * @param option scoketUrl 通信URL 必填
+     * @param option username 用户名 必填
+     * @param option password 密码 必填
+     */
+    const option = {
+      scoketUrl: 'https://ebjrd.heshengvast.com/inverse/webrtc',
+      username: 22001,
+      password: 12345
+    }
+    hs.start(option)
+     const addlist = {
+        create: () => {
+          console.log('主叫成功')
+        },
+        answer: () => {
+          console.log('开始接通')
+        },
+        error: (e) => {
+          console.log(e)
+        },
+        hangup: () => {
+          console.log('挂断')
+        }
+     }
+     hs.addListener(addlist)
+      /**
+     * @description 拨打
+     * @param payload 需要传递的业务字符串 { extStr:  } 需要JSON字符串
+     * @param payload  extStr b 商户号唯一标识
+     * @param payload  extStr callerDestinationType 1本人 2亲友 3 随便
+     * @param callbackUrl 数据回调地址
+     * @param callerDestinationNumber 电话
+     * @param encryption 0不加密 1加密
+     * @param callType 0催收 1电销
+     * @param uuid 可传 可不传
+     */
+     
+     function test () {
+        const da = {
+          option: {
+          payload: { extStr: JSON.stringify({ b: 'hs', callerDestinationType: 3 }) },
+          callerDestinationNumber: '17600123846',
+          encryption: 0,
+          callType: 1
+        }
+      }
+      hs.dial(da)
+     }
+  </script>
+</html>
